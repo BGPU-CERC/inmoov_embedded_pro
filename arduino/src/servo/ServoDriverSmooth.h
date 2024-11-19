@@ -15,7 +15,8 @@ public:
     void attach(int pin);
     void detach();
     void sendToDriver(uint16_t val);
-    Adafruit_PWMServoDriver _servo = Adafruit_PWMServoDriver();
+    Adafruit_PWMServoDriver _servo; // убрал обращение к приватному полю в ServoDriverSmooth
+    // Adafruit_PWMServoDriver _servo = Adafruit_PWMServoDriver();
     
 private:
     static bool _startFlag;        // общий флаг для всех членов

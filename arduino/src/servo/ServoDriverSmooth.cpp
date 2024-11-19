@@ -4,7 +4,8 @@ bool ServoDriverSmooth::_startFlag = false;
 
 ServoDriverSmooth::ServoDriverSmooth(uint8_t addr, int maxAngle) {    
     _maxAngle = maxAngle;
-    _servo._i2caddr = addr;    
+    // _servo._i2caddr = addr;    
+    _servo = Adafruit_PWMServoDriver(addr); // передал поле addr через конструктор
     _min = 150;
     _max = 600;
     SS_DEADZONE = _DRIVER_DEADZONE;
